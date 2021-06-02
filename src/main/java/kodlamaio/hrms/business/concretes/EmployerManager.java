@@ -42,6 +42,5 @@ public class EmployerManager implements EmployerService{
 	
 
 	
-	//https://github.com/bencett/HrmsApplication
-	//https://github.com/htutuncu/HRMS-Project
+	
 }
