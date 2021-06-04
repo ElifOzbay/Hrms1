@@ -38,16 +38,16 @@ public class JobAdvertsController {
 		return this.jobAdvertService.update(jobAdvert);
 	}
 	
+	@PostMapping("/deleteAdvert")
+	public Result deleteAdvert(@RequestParam int id) {
+		
+		return this.jobAdvertService.deleteAdvert(id);
+	}
+	
 	@GetMapping("/getbyid")
 	public DataResult<JobAdvert> getById(@RequestParam int id) {
 		
 		return this.jobAdvertService.getById(id);
-	}
-	
-	@PostMapping("/closeAdvert")
-	public Result closeAdvert(@RequestParam int id) {
-		
-		return this.jobAdvertService.deleteAdvert(id);
 	}
 	
 	@GetMapping("/getAllActiveAdverts")
@@ -62,8 +62,20 @@ public class JobAdvertsController {
 		return this.jobAdvertService.getAllByReleaseDate();
 	}
 	
+	@GetMapping("/getByJobAdvertName")
+	public DataResult<JobAdvert> getByJobAdvertName(@RequestParam String jobAdvertName){
+		return this.jobAdvertService.getByJobAdvertName(jobAdvertName);
+	}
 	
+	@GetMapping("/getByJobAdvertNameandJobPosition")
+	public DataResult<JobAdvert> getByJobAdvertNameAndJobPosition(@RequestParam String jobAdvertName, int jobPositionId){
+		return this.jobAdvertService.getByJobAdvertNameAndJobPosition(jobAdvertName, jobPositionId);
+	}
 	
+	@GetMapping("/getByJobAdvertNameandCity")
+	public DataResult<List<JobAdvert>> getByJobAdvertNameAndCity(@RequestParam String jobAdvertName, int cityId){
+		return this.jobAdvertService.getByJobAdvertNameAndCity(jobAdvertName, cityId);
+	}
 	
 	
 	

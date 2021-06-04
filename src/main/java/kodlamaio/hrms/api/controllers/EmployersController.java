@@ -30,6 +30,11 @@ private EmployerService employerService;
 		return this.employerService.getAll();
 	}
 	
+	@GetMapping("/getByEmail")
+	public DataResult<Employer> getByEmail(String email){
+		return this.employerService.getByEmail(email);
+	}
+	
 	@PostMapping("/add")
 	public Result add(@RequestBody Employer employer) {
 		

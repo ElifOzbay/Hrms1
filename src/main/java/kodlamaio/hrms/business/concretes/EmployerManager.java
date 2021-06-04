@@ -39,6 +39,12 @@ public class EmployerManager implements EmployerService{
 		(employerDao.findAll()," Employer listed.");
 	}
 
+
+	@Override
+	public DataResult<Employer> getByEmail(String email) {
+		return new SuccessDataResult<Employer>(employerDao.findAllByEmail(email));
+	}
+
 	
 
 	

@@ -21,11 +21,11 @@ public class MernisValidationAdapter implements MernisValidationService {
 			result = client.TCKimlikNoDogrula(Long.valueOf(candidate.getNationalIdentity()),
 					candidate.getFirstName().toUpperCase(), candidate.getLastName().toUpperCase(),
 					candidate.getYearofBirth());
-		} catch (NumberFormatException e) {
-			e.printStackTrace();
-		} catch (RemoteException e) {
-			e.printStackTrace();
-		}
+			
+		} catch (Exception e) {
+
+            System.out.println("Not a valid person");
+        }
 
 		return result;
 	}

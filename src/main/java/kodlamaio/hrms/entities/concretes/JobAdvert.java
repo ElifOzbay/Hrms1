@@ -27,6 +27,9 @@ public class JobAdvert {
 	@Column(name = "id")
 	private int id;
 	
+	@Column(name="jobAdvertName")
+	private String jovAdvertName;
+	
 	@Column(name = "jobDescription")
 	private String jobDescription;
 	
@@ -45,7 +48,7 @@ public class JobAdvert {
 	@Column(name="releaseDate")
 	private LocalDate releaseDate;
 	
-	@Column(name="isActive")
+	@Column(name="isActive",columnDefinition="boolean default true")
 	private boolean isActive;
 	
 	@ManyToOne()

@@ -11,6 +11,6 @@ import kodlamaio.hrms.entities.concretes.User;
 
 public interface UserService {
 	DataResult<List<User>> getAll();
-	DataResult<User> getUserByEmail(String email);
+	
 	
 }

@@ -1,10 +1,12 @@
 package kodlamaio.hrms.business.concretes;
 
+import java.awt.print.Pageable;
 import java.time.ZoneId;
 import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 import kodlamaio.hrms.business.abstracts.JobAdvertService;
@@ -64,13 +66,37 @@ public class JobAdvertManager implements JobAdvertService {
 	@Override
 	public DataResult<List<JobAdvert>> getAllActiveAdverts() {
 		return new SuccessDataResult<List<JobAdvert>>
-		(this.jobAdvertDao.getAllActiveAdverts(),"Active advertisement listed.");
+		(this.jobAdvertDao.getAllActiveAdverts()," Active advertisement listed.");
 	}
 
 	@Override
 	public DataResult<List<JobAdvert>> getAllByReleaseDate() {
 		return new SuccessDataResult<List<JobAdvert>>
-		(this.jobAdvertDao.getAllByReleaseDate(),"Advertisement listed by date.");
+		(this.jobAdvertDao.getAllByReleaseDate()," Advertisement listed by date.");
 	}
+
+	
+
+	@Override
+	public DataResult<JobAdvert> getByJobAdvertName(String jobAdvertName) {
+		return new SuccessDataResult<JobAdvert>(this.jobAdvertDao.getByJobAdvertName(jobAdvertName));
+	}
+
+	@Override
+	public DataResult<JobAdvert> getByJobAdvertNameAndJobPosition(String jobAdvertName, int jobPositionId) {
+		return new SuccessDataResult<JobAdvert>(this.jobAdvertDao.getByJobAdvertNameAndJobPositionId(jobAdvertName, jobPositionId));
+		}
+
+	@Override
+	public DataResult<List<JobAdvert>> getByJobAdvertNameAndCity(String jobAdvertName, int cityId) {
+		return new SuccessDataResult<List<JobAdvert>>(this.jobAdvertDao.getByJobAdvertNameAndCity(jobAdvertName, cityId));
+	}
+
+
+	
+
+	
+
+	
 
 }
