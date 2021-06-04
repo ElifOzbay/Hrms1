@@ -2,13 +2,15 @@ package kodlamaio.hrms.core.utilities.adapters.concretes;
 
 import java.rmi.RemoteException;
 
-import org.springframework.stereotype.Component;
+
+import org.springframework.stereotype.Service;
 
 import kodlamaio.hrms.core.utilities.adapters.abstracts.MernisValidationService;
 import kodlamaio.hrms.entities.concretes.Candidate;
 import tr.gov.nvi.tckimlik.WS.KPSPublicSoapProxy;
 
-@Component
+
+@Service
 public class MernisValidationAdapter implements MernisValidationService {
 
 	@Override

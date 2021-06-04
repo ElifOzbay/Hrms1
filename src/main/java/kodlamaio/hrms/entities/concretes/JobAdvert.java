@@ -53,11 +53,11 @@ public class JobAdvert {
 	private JobPosition jobPosition;
 	
 	@ManyToOne()
-	@JoinColumn(name = "city_id")
+	@JoinColumn(name = "cityId")
 	private City city;
 	
 	@ManyToOne()
-	@JoinColumn(name = "employer_id")
+	@JoinColumn(name = "employerId")
 	private Employer employer;
 
 	

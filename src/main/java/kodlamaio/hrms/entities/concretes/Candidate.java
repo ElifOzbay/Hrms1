@@ -35,7 +35,7 @@ public class Candidate extends User {
 	@Column(name="nationalIdentity")
 	private String nationalIdentity;
 	
-	@Column(name="yearOfBirth")
+	@Column(name="yearofBirth")
 	private int yearofBirth;
 	
 	

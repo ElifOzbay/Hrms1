@@ -37,7 +37,7 @@ public class UserCheckManager implements UserCheckService {
 	}
 
 	@Override
-	public boolean isEMailExist(String email) {
+	public boolean isEmailExist(String email) {
 		boolean isExist = false;		
 		for (User user : userDao.findAll()) {
 			if (user.getEmail() == email) {
@@ -69,10 +69,10 @@ public class UserCheckManager implements UserCheckService {
 	}
 
 	@Override
-	public boolean isNationalityIdUnique(String nationalityIdentity) {
+	public boolean isNationalIdentityUnique(String nationalIdentity) {
 		boolean isExist = false;
 		for (Candidate candidate : candidateDao.findAll()) {
-			if (candidate.getNationalIdentity() == nationalityIdentity) {
+			if (candidate.getNationalIdentity() == nationalIdentity) {
 				isExist = true;				
 			}
 		}		

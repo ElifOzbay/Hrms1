@@ -52,11 +52,11 @@ public class JobAdvertManager implements JobAdvertService {
 		if (getById(id).getData().isActive() == false) {
 			return new ErrorResult("This ad is inactive.");
 		}
-		JobAdvert advertToClose = getById(id).getData();
+		JobAdvert deleteAdvert = getById(id).getData();
 
-		advertToClose.setActive(false);
+		deleteAdvert.setActive(false);
 
-		add(advertToClose);
+		add(deleteAdvert);
 
 		return new SuccessResult("The job ad has been deactivated.");
 	}

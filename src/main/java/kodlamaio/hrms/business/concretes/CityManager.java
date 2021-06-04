@@ -27,7 +27,7 @@ public class CityManager implements CityService{
 	@Override
 	public DataResult<List<City>> getAll() {
 		return new SuccessDataResult<List<City>>
-		(cityDao.findAll(),"Cities listed.");
+		(cityDao.findAll()," Cities listed.");
 	}
 
 	@Override

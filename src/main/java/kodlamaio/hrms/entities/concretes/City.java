@@ -22,7 +22,7 @@ import lombok.NoArgsConstructor;
 @Table(name = "cities")
 @NoArgsConstructor
 @AllArgsConstructor
-@JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobAdverts"})
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler","jobAdvertisement"})
 public class City {
 	
 	@Id
@@ -30,9 +30,9 @@ public class City {
 	@Column(name="cityId",nullable=false)
 	private int id;
 	
-	@Column(name="cityName",nullable=false)
+	@Column(name="city_name",nullable=false)
 	private String cityName;
 	
-	@OneToMany(mappedBy="city",fetch = FetchType.LAZY)
-	private List<JobAdvert> jobAdverts;
+	@OneToMany(mappedBy="cities",fetch = FetchType.LAZY)
+	private List<JobAdvert> jobAdvertisement;
 }
