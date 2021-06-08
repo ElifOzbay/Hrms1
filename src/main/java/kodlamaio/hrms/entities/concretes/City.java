@@ -27,12 +27,12 @@ public class City {
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="cityId",nullable=false)
+	@Column(name="id",nullable=false)
 	private int id;
 	
 	@Column(name="city_name",nullable=false)
 	private String cityName;
 	
-	@OneToMany(mappedBy="cities",fetch = FetchType.LAZY)
+	@OneToMany(mappedBy="city",fetch = FetchType.LAZY)
 	private List<JobAdvert> jobAdvertisement;
 }

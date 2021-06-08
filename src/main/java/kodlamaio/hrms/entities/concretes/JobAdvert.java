@@ -28,7 +28,7 @@ public class JobAdvert {
 	private int id;
 	
 	@Column(name="jobAdvertName")
-	private String jovAdvertName;
+	private String jobAdvertName;
 	
 	@Column(name = "jobDescription")
 	private String jobDescription;
@@ -63,9 +63,6 @@ public class JobAdvert {
 	@JoinColumn(name = "employerId")
 	private Employer employer;
 
-	
-	
-	
-	
+
 	
 }

@@ -84,12 +84,12 @@ public class JobAdvertManager implements JobAdvertService {
 
 	@Override
 	public DataResult<JobAdvert> getByJobAdvertNameAndJobPosition(String jobAdvertName, int jobPositionId) {
-		return new SuccessDataResult<JobAdvert>(this.jobAdvertDao.getByJobAdvertNameAndJobPositionId(jobAdvertName, jobPositionId));
+		return new SuccessDataResult<JobAdvert>(this.jobAdvertDao.getByJobAdvertNameAndJobPosition_Id(jobAdvertName, jobPositionId));
 		}
 
 	@Override
 	public DataResult<List<JobAdvert>> getByJobAdvertNameAndCity(String jobAdvertName, int cityId) {
-		return new SuccessDataResult<List<JobAdvert>>(this.jobAdvertDao.getByJobAdvertNameAndCity(jobAdvertName, cityId));
+		return new SuccessDataResult<List<JobAdvert>>(this.jobAdvertDao.getByJobAdvertNameAndCity_Id(jobAdvertName, cityId));
 	}
 
 

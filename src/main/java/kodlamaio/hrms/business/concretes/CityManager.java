@@ -33,7 +33,7 @@ public class CityManager implements CityService{
 	@Override
 	public DataResult<City> getById(int id) {
 		return new SuccessDataResult<City>
-		(this.cityDao.findById(id),"City getted.");
+		(this.cityDao.findById(id).get(),"City getted.");
 	}
 
 	@Override

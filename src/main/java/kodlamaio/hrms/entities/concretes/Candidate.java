@@ -8,7 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.PrimaryKeyJoinColumn;
 import javax.persistence.Table;
 import javax.persistence.Transient;
 
@@ -22,22 +21,24 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@PrimaryKeyJoinColumn(name="candidateId")
 @EqualsAndHashCode(callSuper = false)
 public class Candidate extends User {
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name="firstName")
+//	@Id
+//	@GeneratedValue(strategy = GenerationType.IDENTITY)
+//	@Column(name="candidateId")
+//	private int candidateId;
+	
+	@Column(name="first_name")
 	private String firstName;
 	
-	@Column(name="lastName")
+	@Column(name="last_name")
 	private String lastName;
 	
-	@Column(name="nationalIdentity")
+	@Column(name="national_identity")
 	private String nationalIdentity;
 	
-	@Column(name="yearofBirth")
+	@Column(name="year_of_birth")
 	private int yearofBirth;
 	
 	@Transient 

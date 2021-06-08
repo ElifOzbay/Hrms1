@@ -38,34 +38,41 @@ public class UserCheckManager implements UserCheckService {
 
 	@Override
 	public boolean isEmailExist(String email) {
-		boolean isExist = false;		
-		for (User user : userDao.findAll()) {
-			if (user.getEmail() == email) {
-				isExist = true;
-			}
-		}		
-		return isExist;
+//		boolean isExist = false;		
+//		for (User user : userDao.findAll()) {
+//			if (user.getEmail() == email) {
+//				isExist = true;
+//			}
+//		}		
+		return this.userDao.existsByEmail(email);
 	}
 
 	@Override
 	public boolean isFirstNameOk(String firstName) {
 		Pattern validNamePattern = Pattern.compile("[A-Z][a-z]*");
 		Matcher validNameMatcher = validNamePattern.matcher(firstName);
-		return validNameMatcher.matches();
+		if(firstName.length()>=2&&validNameMatcher.matches())
+		return true;
+		
+		return false;
+		
 	}
 
 	@Override
 	public boolean isLastNameOk(String lastName) {
 		Pattern validLastNamePattern = Pattern.compile("[A-Z]+([ '-][a-zA-Z]+)*");
 		Matcher validLastNameMatcher = validLastNamePattern.matcher(lastName);
-		return validLastNameMatcher.matches();
+		if(lastName.length()>=2&&validLastNameMatcher.matches())
+			return true;
+			
+			return false;
 	}
 
 	@Override
 	public boolean isPasswordOk(String password) {
 		Pattern validPasswordPattern = Pattern.compile("^(?=.*\\\\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%]).{8,16}$");
 		Matcher validPasswordMatcher = validPasswordPattern.matcher(password);
-		return validPasswordMatcher.matches();
+		return true;
 	}
 
 	@Override
@@ -76,7 +83,13 @@ public class UserCheckManager implements UserCheckService {
 				isExist = true;				
 			}
 		}		
-		return isExist;
+		return true;
+	}
+
+
+	@Override
+	public boolean isRealPerson(Candidate candidate) {
+		return this.mernisValidationService.checkIfRealPerson(candidate);
 	}
 	
 }

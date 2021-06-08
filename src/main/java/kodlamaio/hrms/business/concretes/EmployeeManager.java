@@ -17,6 +17,7 @@ import kodlamaio.hrms.entities.concretes.Employee;
 @Service
 public class EmployeeManager implements EmployeeService{
 
+	
 	private EmployeeDao employeeDao;
 	
 	@Autowired

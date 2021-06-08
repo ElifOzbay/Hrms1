@@ -1,5 +1,7 @@
 package kodlamaio.hrms.business.abstracts;
 
+import kodlamaio.hrms.entities.concretes.Candidate;
+
 public interface UserCheckService {
 	
 	boolean isValidEMail(String email);
@@ -8,4 +10,5 @@ public interface UserCheckService {
 	boolean isLastNameOk(String lastName);
 	boolean isPasswordOk(String password);
 	boolean isNationalIdentityUnique(String nationalIdentity);
+	boolean isRealPerson(Candidate candidate);
 }
